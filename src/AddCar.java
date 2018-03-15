@@ -2,6 +2,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class AddCar {
 
@@ -11,6 +13,7 @@ public class AddCar {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application. dyv
@@ -70,6 +73,16 @@ public class AddCar {
 		textField_4.setBounds(327, 252, 86, 20);
 		frame.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
+		
+		JLabel lblType = new JLabel("Type");
+		lblType.setBounds(271, 65, 46, 14);
+		frame.getContentPane().add(lblType);
+		
+		btnNewButton = new JButton("dyvesh");
+		btnNewButton.setBounds(206, 151, 89, 23);
+		frame.getContentPane().add(btnNewButton);
+		
+		
+		
 	}
-
 }
