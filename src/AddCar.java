@@ -2,6 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 public class AddCar {
 
@@ -68,6 +69,10 @@ public class AddCar {
 		textField_4.setBounds(327, 252, 86, 20);
 		frame.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
+		
+		JLabel lblRegistrationId = new JLabel("Registration ID");
+		lblRegistrationId.setBounds(98, 65, 101, 14);
+		frame.getContentPane().add(lblRegistrationId);
 	}
 
 }
