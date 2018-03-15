@@ -11,7 +11,6 @@ public class AddCar {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JTextField textField_5;
 
 	/**
 	 * Launch the application.
@@ -69,12 +68,6 @@ public class AddCar {
 		textField_4.setBounds(327, 252, 86, 20);
 		frame.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
-		
-		textField_5 = new JTextField();
-		textField_5.setText("00");
-		textField_5.setBounds(327, 296, 86, 20);
-		frame.getContentPane().add(textField_5);
-		textField_5.setColumns(10);
 	}
 
 }
