@@ -160,7 +160,7 @@ public class AddCar {
 								
 				try{					
 					
-					PrintWriter out = new PrintWriter(new FileWriter("cAR.txt", true));
+					PrintWriter out = new PrintWriter(new FileWriter("CarDetails.txt", true));
 					
 					out.format("%s %s %s %s %s %s %s %s",a,b,c,d,z,f,g,h);
 					out.println();
@@ -176,7 +176,7 @@ public class AddCar {
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-						}
+		 				}
 				
 			
 			}
