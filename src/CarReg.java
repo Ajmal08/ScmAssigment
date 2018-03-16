@@ -15,7 +15,7 @@ public class CarReg {
 
 	/**
 	 * Launch the application.
-	 * hellow world new
+	 * hellow world new a
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
