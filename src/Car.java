@@ -9,7 +9,7 @@ public class Car {
 	int year;
 	int price;
 	
-	//Hello vvvvddfff
+	//Hello World
 	
 	@Override
 	public String toString() {
