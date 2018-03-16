@@ -8,6 +8,26 @@ public class Car {
 	int engineCapacity;
 	int year;
 	int price;
+	
+	//Hello vvvv
+	
+	@Override
+	public String toString() {
+		return "Car [regid=" + regid + ", make=" + make + ", model=" + model + ", colour=" + colour + ", type=" + type
+				+ ", engineCapacity=" + engineCapacity + ", year=" + year + ", price=" + price + "]";
+	}
+	public Car(int regid, String make, String model, String colour, String type, int engineCapacity, int year,
+			int price) {
+		super();
+		this.regid = regid;
+		this.make = make;
+		this.model = model;
+		this.colour = colour;
+		this.type = type;
+		this.engineCapacity = engineCapacity;
+		this.year = year;
+		this.price = price;
+	}
 	public int getRegid() {
 		return regid;
 	}
