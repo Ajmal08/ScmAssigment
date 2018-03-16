@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class AddCar {
 
@@ -34,6 +35,7 @@ public class AddCar {
 	 */
 	public AddCar() {
 		initialize();
+		//dyv
 	}
 
 	/**
@@ -73,6 +75,9 @@ public class AddCar {
 		JLabel lblRegistrationId = new JLabel("Registration ID");
 		lblRegistrationId.setBounds(98, 65, 101, 14);
 		frame.getContentPane().add(lblRegistrationId);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(87, 128, 89, 23);
+		frame.getContentPane().add(btnNewButton);
 	}
-
 }
