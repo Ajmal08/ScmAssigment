@@ -144,6 +144,11 @@ public class AddCar {
 		JLabel lblType1 = new JLabel("Type");
 		lblType1.setBounds(178, 255, 46, 14);
 		frame.getContentPane().add(lblType1);
+		
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(337, 427, 46, 14);
+		frame.getContentPane().add(lblNewLabel);
 
 		
 		JButton btnSave = new JButton("Save");
@@ -163,6 +168,8 @@ public class AddCar {
 					PrintWriter out = new PrintWriter(new FileWriter("CarDetails.txt", true));
 					
 					out.format("%s %s %s %s %s %s %s %s",a,b,c,d,z,f,g,h);
+					
+					lblNewLabel.setText("Sucess Addd record);
 					out.println();
 					out.close();
 					
@@ -183,6 +190,8 @@ public class AddCar {
 		});
 		btnSave.setBounds(190, 423, 89, 23);
 		frame.getContentPane().add(btnSave);
+		
+		
 
 	}
 }
