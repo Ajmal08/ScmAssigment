@@ -169,7 +169,7 @@ public class AddCar {
 					
 					out.format("%s %s %s %s %s %s %s %s",a,b,c,d,z,f,g,h);
 					
-					lblNewLabel.setText("Sucess Addd record);
+					lblNewLabel.setText("Sucess Add record by dyv");
 					out.println();
 					out.close();
 					
