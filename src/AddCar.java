@@ -4,6 +4,15 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Formatter;
+import java.util.Scanner;
+import java.awt.event.ActionEvent;
 
 public class AddCar {
 
@@ -44,6 +53,8 @@ public class AddCar {
 	public AddCar() {
 		initialize();
 		//dyv
+		
+		
 	}
 
 	/**
@@ -130,9 +141,48 @@ public class AddCar {
 		frame.getContentPane().add(textField_7);
 		textField_7.setColumns(10);
 		
-		JLabel lblType = new JLabel("Type");
-		lblType.setBounds(178, 255, 46, 14);
-		frame.getContentPane().add(lblType);
->>>>>>> branch 'master' of https://github.com/Ajmal08/ScmAssigment.git
+		JLabel lblType1 = new JLabel("Type");
+		lblType1.setBounds(178, 255, 46, 14);
+		frame.getContentPane().add(lblType1);
+
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String a=textField.getText();
+				String b=textField_1.getText();
+				String c=textField_2.getText();
+				String d=textField_3.getText();
+				String z=textField_4.getText();
+				String f=textField_5.getText();
+				String g=textField_6.getText();
+				String h=textField_7.getText();
+								
+				try{					
+					
+					PrintWriter out = new PrintWriter(new FileWriter("cAR.txt", true));
+					
+					out.format("%s %s %s %s %s %s %s %s",a,b,c,d,z,f,g,h);
+					out.println();
+					out.close();
+					
+				}
+				catch(FileNotFoundException fnfe){
+					System.out.println("File Not Found");
+				}
+				catch(SecurityException se){
+					System.out.println("No Permission");
+					
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+						}
+				
+			
+			}
+		});
+		btnSave.setBounds(190, 423, 89, 23);
+		frame.getContentPane().add(btnSave);
+
 	}
 }
