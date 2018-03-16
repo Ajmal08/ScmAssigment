@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AddCar {
 
@@ -124,5 +126,13 @@ public class AddCar {
 		JLabel lblType = new JLabel("Type");
 		lblType.setBounds(178, 255, 46, 14);
 		frame.getContentPane().add(lblType);
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnSave.setBounds(190, 423, 89, 23);
+		frame.getContentPane().add(btnSave);
 	}
 }
