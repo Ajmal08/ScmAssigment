@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.Collections;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
@@ -55,6 +57,21 @@ public class CarReg {
 		frame.getContentPane().add(btnUpdate);
 		
 		JButton btnAdd = new JButton("Add");
+		
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					AddCar frame =new AddCar();
+					AddCar.AddCar();
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
+			}});
+
 		btnAdd.setBounds(346, 193, 124, 23);
 		frame.getContentPane().add(btnAdd);
 		
@@ -67,6 +84,26 @@ public class CarReg {
 		
 		JButton btnSort = new JButton("Sort");
 		btnSort.setBounds(346, 256, 124, 23);
+		
+
+		btnSort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					SortGUI frame =new SortGUI();
+					frame.SortGUI();
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
+			}});
+		
+		
 		frame.getContentPane().add(btnSort);
 		
 		JLabel lblCarRegistration = new JLabel("Car Registration");

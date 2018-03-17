@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 public class Car {
 	int regid;
@@ -77,5 +78,63 @@ public class Car {
 		this.price = price;
 	}
 	
+	// Comparator for sorting the list by Brand
+	public static Comparator<Car> BrandComparator = new Comparator<Car>() {
+
+		public int compare(Car c1, Car c2) {
+		   String CarBrand1 = c1.getMake().toUpperCase();
+		   String CarBrand2 = c2.getMake().toUpperCase();
+
+		   //ascending order
+		   return CarBrand1.compareTo(CarBrand2);
+
+		   //descending order
+		   //return CarBrand2.compareTo(CarBrand1);
+	    }};
+	    
+	    
+		// Comparator for sorting the list by Price
+		public static Comparator<Car> PriceComparator = new Comparator<Car>() {
+
+			public int compare(Car c1, Car c2) {
+			   int CarPrice1 = c1.getPrice();
+			   int CarPrice2 = c2.getPrice();
+
+			   //ascending order
+			   return CarPrice1-CarPrice2;
+
+			   //descending order
+			   //return CarPrice2-CarPrice1;
+		    }};
+		    
+		 // Comparator for sorting the list by year
+			public static Comparator<Car> YearComparator = new Comparator<Car>() {
+
+				public int compare(Car c1, Car c2) {
+				   int CarYear1 = c1.getYear();
+				   int CarYear2 = c2.getYear();
+
+				   //ascending order
+				   return CarYear1-CarYear2;
+
+				   //descending order
+				   //return CarYear1-CarYear2;
+			    }};  
+			    
+			    
+			 // Comparator for sorting the list by year
+				public static Comparator<Car> EngineComparator = new Comparator<Car>() {
+
+					public int compare(Car c1, Car c2) {
+					   int CarEngine1 = c1.getEngineCapacity();
+					   int CarEngine2 = c2.getEngineCapacity();
+
+					   //ascending order
+					   return CarEngine1-CarEngine2;
+
+					   //descending order
+					   //return CarEngine2-CarEngine1;
+				    }};  
+				    
 
 }
