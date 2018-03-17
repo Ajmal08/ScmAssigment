@@ -149,6 +149,7 @@ public class SortGUI {
 				}
 
 				String[] thearray = new String[myarray.size()];
+				
 				for (int i = 0; i < thearray.length; i++) {
 					thearray[i] = myarray.get(i);
 				}
