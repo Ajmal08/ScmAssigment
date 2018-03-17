@@ -58,6 +58,10 @@ public class CarReg {
 		
 		JButton btnAdd = new JButton("Add");
 		
+		
+		
+		
+		
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -109,6 +113,24 @@ public class CarReg {
 		JLabel lblCarRegistration = new JLabel("Car Registration");
 		lblCarRegistration.setBounds(359, 44, 94, 14);
 		frame.getContentPane().add(lblCarRegistration);
+		
+		
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					SearchCarDetails frame =new SearchCarDetails();
+					frame.SearchCarDetails();
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
+			}});
 		
 		
 	}
