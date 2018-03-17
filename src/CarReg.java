@@ -58,6 +58,13 @@ public class CarReg {
 		btnAdd.setBounds(346, 193, 124, 23);
 		frame.getContentPane().add(btnAdd);
 		
+		// open AddCar class
+		
+		
+		
+		
+		
+		
 		JButton btnSort = new JButton("Sort");
 		btnSort.setBounds(346, 256, 124, 23);
 		frame.getContentPane().add(btnSort);

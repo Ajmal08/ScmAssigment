@@ -45,6 +45,8 @@ public class AddCar {
 				}
 			}
 		});
+		
+		
 	}
 
 	/**
@@ -173,6 +175,8 @@ public class AddCar {
 					out.println();
 					out.close();
 					
+					
+					SortClass.ReadFile();
 				}
 				catch(FileNotFoundException fnfe){
 					System.out.println("File Not Found");
@@ -194,4 +198,6 @@ public class AddCar {
 		
 
 	}
+
+	
 }
