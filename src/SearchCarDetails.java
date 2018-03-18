@@ -32,8 +32,10 @@ public class SearchCarDetails  {
 
 	/**
 	 * Launch the application.
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
-	public static void SearchCarDetails() {
+	public static void SearchCarDetails() throws NumberFormatException, IOException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,20 +47,8 @@ public class SearchCarDetails  {
 				}
 			}
 		});
-	}
-
-	public SearchCarDetails()  throws NumberFormatException, IOException {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 * 
-	 * @throws IOException
-	 * @throws NumberFormatException
-	 */
-	private void initialize() throws NumberFormatException, IOException {
-
+		
+		
 		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader("CarDetails.txt"));
@@ -82,6 +72,22 @@ public class SearchCarDetails  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+
+	public SearchCarDetails()  throws NumberFormatException, IOException {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 * 
+	 * @throws IOException
+	 * @throws NumberFormatException
+	 */
+	private void initialize() throws NumberFormatException, IOException {
+
+		
 		
 		
 		

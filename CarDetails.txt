@@ -5,3 +5,4 @@
 456 mazda delta black car 2460 2019 123496321
 123 toyota vitz red car 1000 1988 250000
 1247 volvo zinx black suv 2579 2018 2400000
+123 toyota vitz red car 1000 1988 250000
