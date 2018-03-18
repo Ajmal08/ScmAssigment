@@ -140,6 +140,15 @@ public class SearchCarDetails  {
 		btnNewButton_1.setBounds(379, 150, 97, 25);
 		frame.getContentPane().add(btnNewButton_1);
 		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
+		btnBack.setBounds(230, 365, 89, 23);
+		frame.getContentPane().add(btnBack);
+		
 		
 		
 		//search by year

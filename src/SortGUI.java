@@ -95,7 +95,7 @@ public class SortGUI {
 
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.activeCaption);
-		frame.setBounds(100, 100, 451, 461);
+		frame.setBounds(100, 100, 451, 516);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -220,6 +220,15 @@ public class SortGUI {
 		lblNewLabel.setFont(new Font("Rockwell Nova", Font.PLAIN, 15));
 		lblNewLabel.setBounds(20, 29, 381, 14);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
+		btnBack.setBounds(163, 427, 89, 23);
+		frame.getContentPane().add(btnBack);
 
 		btnBrand.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

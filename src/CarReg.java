@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 
 public class CarReg {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -53,6 +53,11 @@ public class CarReg {
 		frame.getContentPane().add(btnSearch);
 		
 		JButton btnUpdate = new JButton("Update ");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnUpdate.setBounds(346, 362, 124, 23);
 		frame.getContentPane().add(btnUpdate);
 		
@@ -113,6 +118,15 @@ public class CarReg {
 		JLabel lblCarRegistration = new JLabel("Car Registration");
 		lblCarRegistration.setBounds(359, 44, 94, 14);
 		frame.getContentPane().add(lblCarRegistration);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnExit.setBounds(346, 410, 124, 23);
+		frame.getContentPane().add(btnExit);
 		
 		
 		btnSearch.addActionListener(new ActionListener() {

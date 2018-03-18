@@ -16,10 +16,11 @@ import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Window;
 import java.awt.Font;
 
 public class AddCar extends JFrame{
-	//hello
+	
 
 	private JFrame frame;
 	private JTextField textField;
@@ -33,6 +34,7 @@ public class AddCar extends JFrame{
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JButton btnBack;
 
 	/**
 	 * Launch the application. dyvesh mahadeac so
@@ -69,7 +71,7 @@ public class AddCar extends JFrame{
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(153, 180, 209));
-		frame.setBounds(100, 100, 520, 534);
+		frame.setBounds(100, 100, 520, 553);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -209,9 +211,17 @@ public class AddCar extends JFrame{
 		btnSave.setBounds(205, 444, 111, 23);
 		frame.getContentPane().add(btnSave);
 		
+		btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frame.dispose();
+			}
+		});
+		btnBack.setBounds(205, 478, 111, 23);
+		frame.getContentPane().add(btnBack);
+		
 		
 
 	}
-
-	
 }

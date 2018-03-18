@@ -97,7 +97,7 @@ public class UpdateGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 439);
+		frame.setBounds(100, 100, 450, 478);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -316,6 +316,21 @@ public class UpdateGUI {
 		});
 		btnUpdate.setBounds(186, 367, 89, 23);
 		frame.getContentPane().add(btnUpdate);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
+		btnBack.setBounds(186, 401, 89, 23);
+		frame.getContentPane().add(btnBack);
+		
+	}
+
+
+	public void UpdateGUI() {
+		// TODO Auto-generated method stub
 		
 	}
 }
