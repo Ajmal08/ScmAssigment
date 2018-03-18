@@ -3,13 +3,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.SystemColor;
 
 public class CarReg {
 
@@ -34,22 +41,24 @@ public class CarReg {
 
 	/**
 	 * Create the application.
+	 * @throws IOException 
 	 */
-	public CarReg() {
+	public CarReg() throws IOException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws IOException 
 	 */
-	private void initialize() {
+	private void initialize() throws IOException {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 851, 561);
+		frame.setBounds(100, 100, 500,550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnSearch = new JButton("Search");
-		btnSearch.setBounds(346, 311, 124, 23);
+		btnSearch.setBounds(177, 340, 124, 23);
 		frame.getContentPane().add(btnSearch);
 		
 		JButton btnUpdate = new JButton("Update ");
@@ -58,8 +67,26 @@ public class CarReg {
 				
 			}
 		});
-		btnUpdate.setBounds(346, 362, 124, 23);
+		btnUpdate.setBounds(177, 396, 124, 23);
+		btnUpdate.addActionListener(new ActionListener() {	//when button  sort is clicked
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					UpdateGUI frame =new UpdateGUI();
+					frame.UpdateGUI();
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
+			}});
+		
 		frame.getContentPane().add(btnUpdate);
+		
 		
 		JButton btnAdd = new JButton("Add");
 		
@@ -76,12 +103,15 @@ public class CarReg {
 				} catch (NumberFormatException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 				
 				
 			}});
 
-		btnAdd.setBounds(346, 193, 124, 23);
+		btnAdd.setBounds(177, 196, 124, 23);
 		frame.getContentPane().add(btnAdd);
 		
 		// open AddCar class
@@ -92,7 +122,7 @@ public class CarReg {
 		
 		
 		JButton btnSort = new JButton("Sort");
-		btnSort.setBounds(346, 256, 124, 23);
+		btnSort.setBounds(177, 267, 124, 23);
 		
 
 		btnSort.addActionListener(new ActionListener() {
@@ -116,7 +146,9 @@ public class CarReg {
 		frame.getContentPane().add(btnSort);
 		
 		JLabel lblCarRegistration = new JLabel("Car Registration");
-		lblCarRegistration.setBounds(359, 44, 94, 14);
+		lblCarRegistration.setForeground(SystemColor.inactiveCaptionBorder);
+		lblCarRegistration.setFont(new Font("Matura MT Script Capitals", Font.BOLD, 25));
+		lblCarRegistration.setBounds(131, 31, 274, 43);
 		frame.getContentPane().add(lblCarRegistration);
 		
 		JButton btnExit = new JButton("Exit");
@@ -125,9 +157,38 @@ public class CarReg {
 				System.exit(0);
 			}
 		});
-		btnExit.setBounds(346, 410, 124, 23);
+		btnExit.setBounds(177, 459, 124, 23);
 		frame.getContentPane().add(btnExit);
+	
 		
+		
+		
+		
+		ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/logo.png"));
+		
+		
+		BufferedImage image1 = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/logo.png"));
+		ImageIcon icon1 = new ImageIcon(image1);
+		JLabel label1 = new JLabel(icon1);
+			
+		label1.setBounds(-16, -131, 500, 550);
+		frame.getContentPane().add(label1);
+		
+		
+		
+		
+		
+		
+		
+		ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		
+	
+		BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		ImageIcon icon = new ImageIcon(image);
+		JLabel label = new JLabel(icon);
+			
+		label.setBounds(-16, 0, 500, 550);
+		frame.getContentPane().add(label);
 		
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

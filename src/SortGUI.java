@@ -1,14 +1,18 @@
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JFrame;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -95,21 +99,22 @@ public class SortGUI {
 
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.activeCaption);
-		frame.setBounds(100, 100, 451, 516);
+		frame.setBounds(100, 100, 500, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JButton btnBrand = new JButton("Brand");
-		btnBrand.setBackground(SystemColor.textHighlight);
-		btnBrand.setBounds(20, 64, 73, 23);
+		btnBrand.setBackground(SystemColor.inactiveCaption);
+		btnBrand.setBounds(10, 76, 73, 23);
 		frame.getContentPane().add(btnBrand);
 
 		JList<String> list = new JList<String>();
-		list.setBounds(20, 110, 392, 301);
+		list.setBackground(SystemColor.info);
+		list.setBounds(10, 110, 464, 301);
 		frame.getContentPane().add(list);
 
 		JButton btnPrice = new JButton("Price");
-		btnPrice.setBackground(SystemColor.textHighlight);
+		btnPrice.setBackground(SystemColor.inactiveCaption);
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -120,8 +125,8 @@ public class SortGUI {
 
 				//storing price details from car object into a string call x
 				for (Car str : cars) {
-					x = str.getModel() + " " + str.getMake() + " " + str.getEngineCapacity() + " " + str.getPrice()
-							+ " " + str.getRegid();
+					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
+					+ "-- ID:- " + str.getRegid();
 					//add string x to myarray
 					myarray.add(x);
 				}
@@ -142,11 +147,11 @@ public class SortGUI {
 			}
 		});
 
-		btnPrice.setBounds(103, 64, 79, 23);
+		btnPrice.setBounds(126, 76, 79, 23);
 		frame.getContentPane().add(btnPrice);
 
 		JButton btnEngineCapacity = new JButton("Engine capacity");
-		btnEngineCapacity.setBackground(SystemColor.textHighlight);
+		btnEngineCapacity.setBackground(SystemColor.inactiveCaption);
 		btnEngineCapacity.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -156,8 +161,8 @@ public class SortGUI {
 				ArrayList<String> myarray = new ArrayList<>();
 
 				for (Car str : cars) {
-					x = str.getModel() + " " + str.getMake() + " " + str.getEngineCapacity() + " " + str.getPrice()
-							+ " " + str.getRegid();
+					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
+					+ "-- ID:- " + str.getRegid();
 					myarray.add(x);
 				}
 
@@ -178,11 +183,11 @@ public class SortGUI {
 			}
 		});
 
-		btnEngineCapacity.setBounds(299, 64, 113, 23);
+		btnEngineCapacity.setBounds(361, 76, 113, 23);
 		frame.getContentPane().add(btnEngineCapacity);
 
 		JButton btnYear = new JButton("Year");
-		btnYear.setBackground(SystemColor.textHighlight);
+		btnYear.setBackground(SystemColor.inactiveCaption);
 		btnYear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -192,8 +197,8 @@ public class SortGUI {
 				ArrayList<String> myarray = new ArrayList<>();
 
 				for (Car str : cars) {
-					x = str.getModel() + " " + str.getMake() + " " + str.getEngineCapacity() + " " + str.getPrice()
-							+ " " + str.getRegid();
+					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
+							+ "-- ID:- " + str.getRegid();
 					myarray.add(x);
 				}
 
@@ -213,21 +218,23 @@ public class SortGUI {
 			}
 		});
 
-		btnYear.setBounds(205, 64, 73, 23);
+		btnYear.setBounds(258, 76, 73, 23);
 		frame.getContentPane().add(btnYear);
 
-		JLabel lblNewLabel = new JLabel("Choose your car characteristic you want to sort out");
-		lblNewLabel.setFont(new Font("Rockwell Nova", Font.PLAIN, 15));
-		lblNewLabel.setBounds(20, 29, 381, 14);
+		JLabel lblNewLabel = new JLabel("Sort Car");
+		lblNewLabel.setForeground(SystemColor.text);
+		lblNewLabel.setFont(new Font("Matura MT Script Capitals", Font.BOLD, 25));
+		lblNewLabel.setBounds(183, 23, 156, 43);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.setBackground(SystemColor.inactiveCaption);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		btnBack.setBounds(163, 427, 89, 23);
+		btnBack.setBounds(210, 454, 89, 23);
 		frame.getContentPane().add(btnBack);
 
 		btnBrand.addActionListener(new ActionListener() {
@@ -239,8 +246,8 @@ public class SortGUI {
 				ArrayList<String> myarray = new ArrayList<>();
 
 				for (Car str : cars) {
-					x = str.getModel() + " " + str.getMake() + " " + str.getEngineCapacity() + " " + str.getPrice()
-							+ " " + str.getRegid();
+					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
+					+ "-- ID:- " + str.getRegid();
 					myarray.add(x);
 				}
 
@@ -259,6 +266,16 @@ public class SortGUI {
 
 			}
 		});
+		
+		 ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+			
+			
+			BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+			ImageIcon icon = new ImageIcon(image);
+			JLabel label = new JLabel(icon);
+				
+			label.setBounds(-16, 0, 500, 550);
+			frame.getContentPane().add(label);
 
 	}
 }

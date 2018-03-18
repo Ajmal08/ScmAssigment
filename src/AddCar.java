@@ -4,8 +4,11 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.text.JTextComponent;
 import javax.swing.JLabel;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -57,8 +60,9 @@ public class AddCar extends JFrame{
 
 	/**
 	 * Create the application.
+	 * @throws IOException 
 	 */
-	public AddCar() {
+	public AddCar() throws IOException {
 		initialize();
 		//dyv
 		
@@ -67,39 +71,45 @@ public class AddCar extends JFrame{
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws IOException 
 	 */
-	private void initialize() {
+	private void initialize() throws IOException {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(153, 180, 209));
-		frame.setBounds(100, 100, 520, 553);
+		frame.setBounds(100, 100, 500, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
+		textField.setBackground(SystemColor.info);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField.setBounds(210, 62, 203, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
+		textField_1.setBackground(SystemColor.info);
 		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_1.setBounds(210, 106, 203, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
+		textField_2.setBackground(SystemColor.info);
 		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_2.setBounds(210, 152, 203, 20);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
 		textField_3 = new JTextField();
+		textField_3.setBackground(SystemColor.info);
 		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_3.setBounds(210, 202, 203, 20);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
 		
 		textField_4 = new JTextField();
+		textField_4.setBackground(SystemColor.info);
 		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_4.setBounds(210, 252, 203, 20);
 		frame.getContentPane().add(textField_4);
@@ -108,60 +118,71 @@ public class AddCar extends JFrame{
 		
 
 		JLabel lblRegistrationId = new JLabel("Registration ID");
-		lblRegistrationId.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblRegistrationId.setForeground(SystemColor.inactiveCaptionBorder);
+		lblRegistrationId.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblRegistrationId.setBounds(44, 64, 156, 14);
 		frame.getContentPane().add(lblRegistrationId);
 		
 		JLabel lblMake = new JLabel("Make ");
-		lblMake.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblMake.setForeground(SystemColor.inactiveCaptionBorder);
+		lblMake.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblMake.setBounds(44, 109, 131, 14);
 		frame.getContentPane().add(lblMake);
 		
 		JLabel lblModel = new JLabel("Model");
-		lblModel.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblModel.setForeground(SystemColor.inactiveCaptionBorder);
+		lblModel.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblModel.setBounds(44, 155, 131, 14);
 		frame.getContentPane().add(lblModel);
 		
 		JLabel lblColour = new JLabel("Colour ");
-		lblColour.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblColour.setForeground(SystemColor.inactiveCaptionBorder);
+		lblColour.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblColour.setBounds(44, 205, 131, 14);
 		frame.getContentPane().add(lblColour);
 		
 		lblEngineCapacity = new JLabel("Engine Capacity");
-		lblEngineCapacity.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblEngineCapacity.setForeground(SystemColor.inactiveCaptionBorder);
+		lblEngineCapacity.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblEngineCapacity.setBounds(44, 301, 156, 14);
 		frame.getContentPane().add(lblEngineCapacity);
 		
 		lblYear = new JLabel("Year");
-		lblYear.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblYear.setForeground(SystemColor.inactiveCaptionBorder);
+		lblYear.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblYear.setBounds(44, 343, 156, 14);
 		frame.getContentPane().add(lblYear);
 		
 		lblPrice = new JLabel("Price");
-		lblPrice.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblPrice.setForeground(SystemColor.inactiveCaptionBorder);
+		lblPrice.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblPrice.setBounds(44, 389, 156, 14);
 		frame.getContentPane().add(lblPrice);
 		
 		textField_5 = new JTextField();
+		textField_5.setBackground(SystemColor.info);
 		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_5.setBounds(210, 298, 203, 20);
 		frame.getContentPane().add(textField_5);
 		textField_5.setColumns(10);
 		
 		textField_6 = new JTextField();
+		textField_6.setBackground(SystemColor.info);
 		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_6.setBounds(210, 340, 203, 20);
 		frame.getContentPane().add(textField_6);
 		textField_6.setColumns(10);
 		
 		textField_7 = new JTextField();
+		textField_7.setBackground(SystemColor.info);
 		textField_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_7.setBounds(210, 386, 203, 20);
 		frame.getContentPane().add(textField_7);
 		textField_7.setColumns(10);
 		
 		JLabel lblType1 = new JLabel("Type");
-		lblType1.setFont(new Font("Rockwell Nova Extra Bold", Font.PLAIN, 14));
+		lblType1.setForeground(SystemColor.inactiveCaptionBorder);
+		lblType1.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
 		lblType1.setBounds(44, 255, 131, 14);
 		frame.getContentPane().add(lblType1);
 		
@@ -169,7 +190,8 @@ public class AddCar extends JFrame{
 
 		
 		JButton btnSave = new JButton("Register");
-		btnSave.setBackground(new Color(255, 255, 255));
+		btnSave.setForeground(SystemColor.desktop);
+		btnSave.setBackground(SystemColor.inactiveCaption);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String a=textField.getText();
@@ -212,6 +234,8 @@ public class AddCar extends JFrame{
 		frame.getContentPane().add(btnSave);
 		
 		btnBack = new JButton("Back");
+		btnBack.setBackground(SystemColor.inactiveCaption);
+		btnBack.setForeground(SystemColor.desktop);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -221,7 +245,15 @@ public class AddCar extends JFrame{
 		btnBack.setBounds(205, 478, 111, 23);
 		frame.getContentPane().add(btnBack);
 		
+		ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
 		
+		
+		BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		ImageIcon icon = new ImageIcon(image);
+		JLabel label = new JLabel(icon);
+			
+		label.setBounds(-16, 0, 500, 550);
+		frame.getContentPane().add(label);
 
 	}
 }

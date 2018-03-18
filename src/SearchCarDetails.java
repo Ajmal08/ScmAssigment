@@ -8,7 +8,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,9 +18,12 @@ import java.util.ArrayList;
 
 import javax.swing.JTextField;
 import javax.swing.JList;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.SystemColor;
 
 public class SearchCarDetails  {
 
@@ -92,61 +97,70 @@ public class SearchCarDetails  {
 		
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 592, 475);
+		frame.setBounds(100, 100, 500, 550);
 		contentPane = new JPanel();
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblSearchForCar = new JLabel("Search For Car Details");
-		lblSearchForCar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblSearchForCar.setBounds(132, 28, 262, 50);
+		lblSearchForCar.setForeground(SystemColor.text);
+		lblSearchForCar.setFont(new Font("Matura MT Script Capitals", Font.BOLD, 25));
+		lblSearchForCar.setBounds(93, 28, 330, 50);
 		frame.getContentPane().add(lblSearchForCar);
 		
 		JLabel lblInsertCarModel = new JLabel("Search By Year:");
-		lblInsertCarModel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblInsertCarModel.setBounds(45, 102, 114, 16);
+		lblInsertCarModel.setForeground(SystemColor.text);
+		lblInsertCarModel.setFont(new Font("Bodoni MT Black", Font.PLAIN, 16));
+		lblInsertCarModel.setBounds(45, 102, 158, 16);
 		frame.getContentPane().add(lblInsertCarModel);
 		
 		textField = new JTextField();
+		textField.setBackground(SystemColor.info);
 		textField.setBounds(203, 100, 116, 22);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Search");
-		btnNewButton.setBounds(379, 99, 97, 25);
+		btnNewButton.setBackground(SystemColor.inactiveCaption);
+		btnNewButton.setBounds(351, 100, 97, 25);
 		frame.getContentPane().add(btnNewButton);
 		
 		JList list = new JList();
-		list.setBounds(45, 201, 424, 153);
+		list.setBackground(SystemColor.info);
+		list.setBounds(10, 201, 464, 211);
 		frame.getContentPane().add(list);
 		
 		JLabel lblNewLabel = new JLabel("Search By Model:");
+		lblNewLabel.setForeground(SystemColor.text);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel.setBounds(45, 153, 114, 16);
+		lblNewLabel.setFont(new Font("Bodoni MT Black", Font.PLAIN, 16));
+		lblNewLabel.setBounds(29, 152, 158, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField_1 = new JTextField();
+		textField_1.setBackground(SystemColor.info);
 		textField_1.setBounds(203, 151, 116, 22);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Search");
+		btnNewButton_1.setBackground(SystemColor.inactiveCaption);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(379, 150, 97, 25);
+		btnNewButton_1.setBounds(351, 151, 97, 25);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.setBackground(SystemColor.inactiveCaption);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		btnBack.setBounds(230, 365, 89, 23);
+		btnBack.setBounds(210, 449, 89, 23);
 		frame.getContentPane().add(btnBack);
 		
 		
@@ -173,8 +187,8 @@ public class SearchCarDetails  {
 				ArrayList<String> myarray = new ArrayList<>();
 				
 				for (Car str : searched) {
-					x = str.getModel() + " " + str.getMake() + " " + str.getEngineCapacity() + " " + str.getPrice()
-							+ " " + str.getRegid();
+					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
+					+ "-- ID:- " + str.getRegid() + "-- Year:- " +str.getYear() ;
 					myarray.add(x);
 				}
 
@@ -243,6 +257,16 @@ public class SearchCarDetails  {
 			
 				}
 			});
+		 
+		 ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+			
+			
+			BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+			ImageIcon icon = new ImageIcon(image);
+			JLabel label = new JLabel(icon);
+				
+			label.setBounds(-16, 0, 500, 550);
+			frame.getContentPane().add(label);
 		 
 		 
 	}
