@@ -269,6 +269,8 @@ public class UpdateGUI {
 					textField_7.setText(Integer.toString( str.getPrice()));
 				
 					myarray.add(x);
+					
+					//jjd
 				}
 				
 				
