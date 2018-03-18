@@ -267,10 +267,10 @@ public class SortGUI {
 			}
 		});
 		
-		 ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		 ImageIO.read(new File("images\\pattern.jpg"));
 			
 			
-			BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+			BufferedImage image = ImageIO.read(new File("images\\pattern.jpg"));
 			ImageIcon icon = new ImageIcon(image);
 			JLabel label = new JLabel(icon);
 				

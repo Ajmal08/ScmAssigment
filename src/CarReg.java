@@ -164,10 +164,10 @@ public class CarReg {
 		
 		
 		
-		ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/logo.png"));
+		ImageIO.read(new File("images\\logo.png"));
 		
 		
-		BufferedImage image1 = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/logo.png"));
+		BufferedImage image1 = ImageIO.read(new File("images\\logo.png"));
 		ImageIcon icon1 = new ImageIcon(image1);
 		JLabel label1 = new JLabel(icon1);
 			
@@ -180,10 +180,10 @@ public class CarReg {
 		
 		
 		
-		ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		ImageIO.read(new File("images\\pattern.jpg"));
 		
 	
-		BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		BufferedImage image = ImageIO.read(new File("images\\pattern.jpg"));
 		ImageIcon icon = new ImageIcon(image);
 		JLabel label = new JLabel(icon);
 			

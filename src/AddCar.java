@@ -245,10 +245,10 @@ public class AddCar extends JFrame{
 		btnBack.setBounds(205, 478, 111, 23);
 		frame.getContentPane().add(btnBack);
 		
-		ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		ImageIO.read(new File("images\\pattern.jpg"));
 		
 		
-		BufferedImage image = ImageIO.read(new File("C:/Users/Kushal-PC/git/ScmAssigment/images/pattern.jpg"));
+		BufferedImage image = ImageIO.read(new File("images\\pattern.jpg"));
 		ImageIcon icon = new ImageIcon(image);
 		JLabel label = new JLabel(icon);
 			
