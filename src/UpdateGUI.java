@@ -142,6 +142,7 @@ public class UpdateGUI {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		
 		textField_1 = new JTextField();
 		textField_1.setBounds(140, 191, 86, 20);
 		frame.getContentPane().add(textField_1);
