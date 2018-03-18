@@ -22,9 +22,11 @@ public class SortGUI {
 
 	/**
 	 * Launch the application.
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
 
-	public static void SortGUI() {
+	public static void SortGUI() throws NumberFormatException, IOException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -36,6 +38,39 @@ public class SortGUI {
 				}
 			}
 		});
+		
+		
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader("CarDetails.txt"));
+
+			String sCurrentLine;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+
+				// Split the string get from the file according to the spaces
+				String[] splited = sCurrentLine.split("\\s+");
+
+				// Add new car to the ArrayList for each new iteration of the
+				// while loop
+
+				cars.add(new Car(Integer.parseInt(splited[0]), splited[1], splited[2], splited[3], splited[4],
+						Integer.parseInt(splited[5]), Integer.parseInt(splited[6]), Integer.parseInt(splited[7])));
+
+			}
+			
+			
+			for(Car x: cars){
+				
+				System.out.println(x);
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	/**
@@ -56,29 +91,7 @@ public class SortGUI {
 	 */
 	private void initialize() throws NumberFormatException, IOException {
 
-		BufferedReader br;
-		try {
-			br = new BufferedReader(new FileReader("CarDetails.txt"));
-
-			String sCurrentLine;
-
-			while ((sCurrentLine = br.readLine()) != null) {
-
-				// Split the string get from the file according to the spaces
-				String[] splited = sCurrentLine.split("\\s+");
-
-				// Add new car to the ArrayList for each new iteration of the
-				// while loop
-
-				cars.add(new Car(Integer.parseInt(splited[0]), splited[1], splited[2], splited[3], splited[4],
-						Integer.parseInt(splited[5]), Integer.parseInt(splited[6]), Integer.parseInt(splited[7])));
-
-			}
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.activeCaption);
