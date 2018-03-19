@@ -31,6 +31,7 @@ public class SearchCarDetails  {
 
 	
 	private JFrame frame;
+	//arraylist containing car objects
 	public static ArrayList<Car> cars = new ArrayList<Car>();
 	private JTextField textField;
 	private JTextField textField_1;
@@ -54,6 +55,7 @@ public class SearchCarDetails  {
 		});
 		
 		
+		//read from file populate arraylist
 		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader("CarDetails.txt"));
@@ -165,7 +167,7 @@ public class SearchCarDetails  {
 		
 		
 		
-		//search by year
+		//search by car details by year
 		
 		 btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
@@ -176,6 +178,8 @@ public class SearchCarDetails  {
 				 ArrayList<Car> searched = new ArrayList<Car>();
 				
 				 String x = "";
+				 
+				 //search for car details from arraylist
 				
 				for(Car mycar:cars) {
 					if(mycar.getYear()==Integer.valueOf(userinput)) {
@@ -185,6 +189,8 @@ public class SearchCarDetails  {
 				}
 				
 				ArrayList<String> myarray = new ArrayList<>();
+				
+				//string of car details 
 				
 				for (Car str : searched) {
 					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
@@ -196,12 +202,15 @@ public class SearchCarDetails  {
 				for (int i = 0; i < thearray.length; i++) {
 					thearray[i] = myarray.get(i);
 				}
+				
+				//convert into defaultlistmodel to populate jlist
 
 				DefaultListModel<String> test = new DefaultListModel<String>();
 
 				for (int i = 0; i < thearray.length; ++i) {
 					test.addElement(thearray[i]);
 				}
+				//assign jlist
 
 				list.setModel(test);
 						

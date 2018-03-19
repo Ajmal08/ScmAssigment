@@ -1,6 +1,7 @@
 import java.util.Comparator;
 
 public class Car {
+	// Declaring variable for Car records.
 	int regid;
 	String make;
 	String model;
@@ -10,8 +11,8 @@ public class Car {
 	int year;
 	int price;
 	
-	//Hello World
 	
+	//ToString method to test and print out the car details
 	@Override
 	public String toString() {
 		return "Car [regid=" + regid + ", make=" + make + ", model=" + model + ", colour=" + colour + ", type=" + type

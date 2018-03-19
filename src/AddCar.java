@@ -206,6 +206,10 @@ public class AddCar extends JFrame{
 				String f=Engine.getText();
 				String g=Year.getText();
 				String h=Price.getText();
+				
+				validate(a,b,c,d,z,f,g,h);
+				
+				
 								
 				try{					
 					
@@ -232,6 +236,11 @@ public class AddCar extends JFrame{
 		 				}
 				
 			
+			}
+
+			private void validate(String a, String b, String c, String d, String z, String f, String g, String h) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		btnSave.setBounds(205, 444, 111, 23);

@@ -22,6 +22,7 @@ import java.awt.SystemColor;
 public class SortGUI {
 
 	private JFrame frame;
+	//populate arraylist of cars
 	public static ArrayList<Car> cars = new ArrayList<Car>();
 
 	/**
@@ -43,6 +44,7 @@ public class SortGUI {
 			}
 		});
 		
+		//retrievd cars details from notepad
 		
 		BufferedReader br;
 		try {
@@ -63,11 +65,6 @@ public class SortGUI {
 
 			}
 			
-			
-			for(Car x: cars){
-				
-				System.out.println(x);
-			}
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -147,7 +144,7 @@ public class SortGUI {
 			}
 		});
 
-		btnPrice.setBounds(126, 76, 79, 23);
+		btnPrice.setBounds(116, 76, 89, 23);
 		frame.getContentPane().add(btnPrice);
 
 		JButton btnEngineCapacity = new JButton("Engine capacity");
@@ -183,7 +180,7 @@ public class SortGUI {
 			}
 		});
 
-		btnEngineCapacity.setBounds(361, 76, 113, 23);
+		btnEngineCapacity.setBounds(341, 76, 133, 23);
 		frame.getContentPane().add(btnEngineCapacity);
 
 		JButton btnYear = new JButton("Year");
@@ -218,7 +215,7 @@ public class SortGUI {
 			}
 		});
 
-		btnYear.setBounds(258, 76, 73, 23);
+		btnYear.setBounds(226, 76, 89, 23);
 		frame.getContentPane().add(btnYear);
 
 		JLabel lblNewLabel = new JLabel("Sort Car");
