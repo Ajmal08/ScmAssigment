@@ -316,7 +316,7 @@ public class AddCar extends JFrame{
 			private boolean validate(String a,String b,String c,String d,String z,String f,String g,String h ) {
 				// TODO Auto-generated method stub
 								
-				//for a
+				//for a reg
 				if (a == null || a.equals("")) {
 					lblNewLabel.setText("Should not be null");										
 					return false;
