@@ -109,6 +109,7 @@ public class CarReg {
 			}
 		});
 
+		
 		btnAdd.setBounds(177, 196, 124, 23);
 		frame.getContentPane().add(btnAdd);
 

@@ -115,6 +115,7 @@ public class SortGUI {
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				
 				// Sorting list for price
 				Collections.sort(cars, Car.PriceComparator);
 				String x = "";
@@ -124,7 +125,7 @@ public class SortGUI {
 				for (Car str : cars) {
 					x = "Model:- "+str.getModel() + "-- Make:- " + str.getMake() + "-- Engine:- " + str.getEngineCapacity() + "-- Price:- " + str.getPrice()
 					+ "-- ID:- " + str.getRegid();
-					//add string x to myarray
+					//add string x to array
 					myarray.add(x);
 				}
 				

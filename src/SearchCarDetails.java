@@ -226,8 +226,7 @@ public class SearchCarDetails  {
 				public void actionPerformed(ActionEvent e) {				
 					
 					String userinput=textField_1.getText();
-					
-					
+						
 					 ArrayList<Car> searched = new ArrayList<Car>();
 					
 					 String x = "";

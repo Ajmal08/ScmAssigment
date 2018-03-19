@@ -234,8 +234,7 @@ public class AddCar extends JFrame{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 		 				}
-				
-			
+		
 			}
 
 			private void validate(String a, String b, String c, String d, String z, String f, String g, String h) {
