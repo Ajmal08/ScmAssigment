@@ -26,21 +26,21 @@ public class AddCar extends JFrame{
 	
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField RegId;
+	private JTextField Make;
+	private JTextField Model;
+	private JTextField colour;
+	private JTextField Type;
 	private JLabel lblEngineCapacity;
 	private JLabel lblYear;
 	private JLabel lblPrice;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
+	private JTextField Engine;
+	private JTextField Year;
+	private JTextField Price;
 	private JButton btnBack;
 
 	/**
-	 * Launch the application. dyvesh mahadeac so
+	 * Launch the application. 
 	 */
 	
 	public static void AddCar() {
@@ -64,9 +64,6 @@ public class AddCar extends JFrame{
 	 */
 	public AddCar() throws IOException {
 		initialize();
-		//dyv
-		
-		
 	}
 
 	/**
@@ -80,40 +77,44 @@ public class AddCar extends JFrame{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBackground(SystemColor.info);
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField.setBounds(210, 62, 203, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		//Input field for Registration id 
+		RegId = new JTextField();
+		RegId.setBackground(SystemColor.info);
+		RegId.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		RegId.setBounds(210, 62, 203, 20);
+		frame.getContentPane().add(RegId);
+		RegId.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBackground(SystemColor.info);
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_1.setBounds(210, 106, 203, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		//Input field for Make
+		Make = new JTextField();
+		Make.setBackground(SystemColor.info);
+		Make.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Make.setBounds(210, 106, 203, 20);
+		frame.getContentPane().add(Make);
+		Make.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBackground(SystemColor.info);
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_2.setBounds(210, 152, 203, 20);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		//Input field for Model
+		Model = new JTextField();
+		Model.setBackground(SystemColor.info);
+		Model.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Model.setBounds(210, 152, 203, 20);
+		frame.getContentPane().add(Model);
+		Model.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBackground(SystemColor.info);
-		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_3.setBounds(210, 202, 203, 20);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		colour = new JTextField();
+		colour.setBackground(SystemColor.info);
+		colour.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		colour.setBounds(210, 202, 203, 20);
+		frame.getContentPane().add(colour);
+		colour.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBackground(SystemColor.info);
-		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_4.setBounds(210, 252, 203, 20);
-		frame.getContentPane().add(textField_4);
-		textField_4.setColumns(10);
+		//Input field for Type
+		Type = new JTextField();
+		Type.setBackground(SystemColor.info);
+		Type.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Type.setBounds(210, 252, 203, 20);
+		frame.getContentPane().add(Type);
+		Type.setColumns(10);
 		
 		
 
@@ -141,6 +142,7 @@ public class AddCar extends JFrame{
 		lblColour.setBounds(44, 205, 131, 14);
 		frame.getContentPane().add(lblColour);
 		
+		
 		lblEngineCapacity = new JLabel("Engine Capacity");
 		lblEngineCapacity.setForeground(SystemColor.inactiveCaptionBorder);
 		lblEngineCapacity.setFont(new Font("Bodoni MT Black", Font.BOLD, 16));
@@ -159,26 +161,28 @@ public class AddCar extends JFrame{
 		lblPrice.setBounds(44, 389, 156, 14);
 		frame.getContentPane().add(lblPrice);
 		
-		textField_5 = new JTextField();
-		textField_5.setBackground(SystemColor.info);
-		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_5.setBounds(210, 298, 203, 20);
-		frame.getContentPane().add(textField_5);
-		textField_5.setColumns(10);
 		
-		textField_6 = new JTextField();
-		textField_6.setBackground(SystemColor.info);
-		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_6.setBounds(210, 340, 203, 20);
-		frame.getContentPane().add(textField_6);
-		textField_6.setColumns(10);
+		//Input field for Engine
+		Engine = new JTextField();
+		Engine.setBackground(SystemColor.info);
+		Engine.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Engine.setBounds(210, 298, 203, 20);
+		frame.getContentPane().add(Engine);
+		Engine.setColumns(10);
 		
-		textField_7 = new JTextField();
-		textField_7.setBackground(SystemColor.info);
-		textField_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_7.setBounds(210, 386, 203, 20);
-		frame.getContentPane().add(textField_7);
-		textField_7.setColumns(10);
+		Year = new JTextField();
+		Year.setBackground(SystemColor.info);
+		Year.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Year.setBounds(210, 340, 203, 20);
+		frame.getContentPane().add(Year);
+		Year.setColumns(10);
+		
+		Price = new JTextField();
+		Price.setBackground(SystemColor.info);
+		Price.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		Price.setBounds(210, 386, 203, 20);
+		frame.getContentPane().add(Price);
+		Price.setColumns(10);
 		
 		JLabel lblType1 = new JLabel("Type");
 		lblType1.setForeground(SystemColor.inactiveCaptionBorder);
@@ -194,14 +198,14 @@ public class AddCar extends JFrame{
 		btnSave.setBackground(SystemColor.inactiveCaption);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String a=textField.getText();
-				String b=textField_1.getText();
-				String c=textField_2.getText();
-				String d=textField_3.getText();
-				String z=textField_4.getText();
-				String f=textField_5.getText();
-				String g=textField_6.getText();
-				String h=textField_7.getText();
+				String a=RegId.getText();
+				String b=Make.getText();
+				String c=Model.getText();
+				String d=colour.getText();
+				String z=Type.getText();
+				String f=Engine.getText();
+				String g=Year.getText();
+				String h=Price.getText();
 								
 				try{					
 					
