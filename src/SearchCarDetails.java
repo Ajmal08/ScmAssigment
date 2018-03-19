@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
+import java.awt.Color;
 
 public class SearchCarDetails  {
 
@@ -140,6 +141,16 @@ public class SearchCarDetails  {
 		lblNewLabel.setBounds(29, 152, 158, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setForeground(Color.RED);
+		lblNewLabel_1.setBounds(203, 126, 180, 14);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setForeground(Color.RED);
+		lblNewLabel_2.setBounds(203, 172, 116, 14);
+		frame.getContentPane().add(lblNewLabel_2);
+		
 		textField_1 = new JTextField();
 		textField_1.setBackground(SystemColor.info);
 		textField_1.setBounds(203, 151, 116, 22);
@@ -173,6 +184,14 @@ public class SearchCarDetails  {
 			public void actionPerformed(ActionEvent e) {				
 				
 				String userinput=textField.getText();
+				userinput = userinput.replaceAll("\\s+","");
+				
+				
+				boolean flag=validate(userinput);
+				
+				if(flag=true) {
+				
+			
 				
 				
 				 ArrayList<Car> searched = new ArrayList<Car>();
@@ -214,8 +233,29 @@ public class SearchCarDetails  {
 
 				list.setModel(test);
 						
+				}
 		
-		
+			}
+
+			private boolean validate(String g) {
+				
+				if (g == null || g.equals("")) {
+					lblNewLabel_1.setText("Should not be null");
+										
+					return false;
+				}else if(g.matches("^[0-9]+$")==false) {
+					lblNewLabel_1.setText("Please enter integer only");
+					return false;					
+				}
+				else if (g.length() != 4 ) {
+					lblNewLabel_1.setText("Year should 4 digits long");
+					return false;
+				}
+				
+				
+				
+				// TODO Auto-generated method stub
+				return false;
 			}
 		});
 		 
@@ -226,6 +266,13 @@ public class SearchCarDetails  {
 				public void actionPerformed(ActionEvent e) {				
 					
 					String userinput=textField_1.getText();
+					userinput = userinput.replaceAll("\\s+","");
+					
+					
+					boolean flag=validateit(userinput);
+					
+					if(flag=true) {
+					
 						
 					 ArrayList<Car> searched = new ArrayList<Car>();
 					
@@ -261,8 +308,22 @@ public class SearchCarDetails  {
 
 					list.setModel(test);
 							
+					}
 			
-			
+				}
+
+				private boolean validateit(String c) {
+					if ( c == null || c.equals("")) {
+						lblNewLabel_2.setText("Should not be null");
+											
+						return false;
+					}
+					else if (c.length() > 12 ) {
+						lblNewLabel_2.setText("Number should be less than 12 characters");
+						return false;
+					}
+					
+					return true;
 				}
 			});
 		 
@@ -271,6 +332,8 @@ public class SearchCarDetails  {
 			
 			BufferedImage image = ImageIO.read(new File("images\\pattern.jpg"));
 			ImageIcon icon = new ImageIcon(image);
+			
+			
 			JLabel label = new JLabel(icon);
 				
 			label.setBounds(-16, 0, 500, 550);

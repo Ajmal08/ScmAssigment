@@ -38,6 +38,10 @@ public class AddCar extends JFrame{
 	private JTextField Year;
 	private JTextField Price;
 	private JButton btnBack;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_4;
 
 	/**
 	 * Launch the application. 
@@ -190,6 +194,52 @@ public class AddCar extends JFrame{
 		lblType1.setBounds(44, 255, 131, 14);
 		frame.getContentPane().add(lblType1);
 		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setBounds(210, 81, 209, 14);
+		frame.getContentPane().add(lblNewLabel);
+		
+		
+		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setForeground(Color.RED);
+		lblNewLabel_1.setBounds(210, 127, 203, 14);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setForeground(Color.RED);
+		lblNewLabel_2.setBounds(210, 177, 203, 14);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setForeground(Color.RED);
+		lblNewLabel_3.setBounds(210, 227, 203, 14);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setForeground(Color.RED);
+		lblNewLabel_4.setBounds(210, 273, 203, 14);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setForeground(Color.RED);
+		lblNewLabel_5.setBounds(210, 315, 203, 14);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setForeground(Color.RED);
+		lblNewLabel_6.setBounds(210, 357, 203, 14);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.setForeground(Color.RED);
+		lblNewLabel_7.setBounds(210, 407, 203, 14);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setForeground(Color.RED);
+		lblNewLabel_8.setBounds(10, 459, 190, 14);
+		frame.getContentPane().add(lblNewLabel_8);
+		
 	
 
 		
@@ -199,48 +249,199 @@ public class AddCar extends JFrame{
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String a=RegId.getText();
+				//Remove space
+				a = a.replaceAll("\\s+","");
 				String b=Make.getText();
+				b = b.replaceAll("\\s+","");
 				String c=Model.getText();
+				c = c.replaceAll("\\s+","");
 				String d=colour.getText();
+				d = d.replaceAll("\\s+","");
 				String z=Type.getText();
+				z = z.replaceAll("\\s+","");
 				String f=Engine.getText();
+				f = f.replaceAll("\\s+","");
 				String g=Year.getText();
+				g = g.replaceAll("\\s+","");
 				String h=Price.getText();
+				h = h.replaceAll("\\s+","");
 				
-				validate(a,b,c,d,z,f,g,h);
+				boolean flag=validate(a,b,c,d,z,f,g,h);
 				
 				
+				
+				/*
+				if(a.matches("^[0-9]+$")==false) {
+					lblNewLabel.setText("Please enter integer only");
+					
+				}
+				else if (a.length() > 12 ) {
+					lblNewLabel.setText("Number should be less than 12 digits");
+				}
+				else {
+				
+				*/if(flag==true) {
+				
+					try{					
+						
+						PrintWriter out = new PrintWriter(new FileWriter("CarDetails.txt", true));
+						
+						out.format("%s %s %s %s %s %s %s %s",a,b,c,d,z,f,g,h);
+						
+						System.out.println("Added");
+						out.println();
+						out.close();
+						
+						
+						
+					}
+					catch(FileNotFoundException fnfe){
+						System.out.println("File Not Found");
+					}
+					catch(SecurityException se){
+						System.out.println("No Permission");
+						
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+			 				}
+				}
+				
+			
 								
-				try{					
-					
-					PrintWriter out = new PrintWriter(new FileWriter("CarDetails.txt", true));
-					
-					out.format("%s %s %s %s %s %s %s %s",a,b,c,d,z,f,g,h);
-					
-					System.out.println("Added");
-					out.println();
-					out.close();
-					
-					
-					
-				}
-				catch(FileNotFoundException fnfe){
-					System.out.println("File Not Found");
-				}
-				catch(SecurityException se){
-					System.out.println("No Permission");
-					
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-		 				}
+				
 		
 			}
 
-			private void validate(String a, String b, String c, String d, String z, String f, String g, String h) {
+			private boolean validate(String a,String b,String c,String d,String z,String f,String g,String h ) {
 				// TODO Auto-generated method stub
+								
+				//for a
+				if (a == null || a.equals("")) {
+					lblNewLabel.setText("Should not be null");										
+					return false;
+				}else if(a.matches("^[0-9]+$")==false) {
+					lblNewLabel.setText("Please enter integer only");
+					return false;					
+				}
+				else if (a.length() > 12 ) {
+					lblNewLabel.setText("Number should be less than 12 digits");
+					return false;
+				}
+				
+				lblNewLabel.setText("");
+				
+				//for b				
+				if (b == null || b.equals("")) {
+					lblNewLabel_1.setText("Should not be null");
+										
+					return false;
+				}else if(b.matches("^[0-9]+$")==true) {
+					lblNewLabel_1.setText("Please enter String only");
+					return false;					
+				}
+				else if (b.length() > 12 ) {
+					lblNewLabel_1.setText("Number should be less than 12 character");
+					return false;
+				}
+				lblNewLabel_1.setText("");
+				
+				//for c
+				if ( c == null || c.equals("")) {
+					lblNewLabel_2.setText("Should not be null");
+										
+					return false;
+				}
+				else if (c.length() > 12 ) {
+					lblNewLabel_2.setText("Number should be less than 12 characters");
+					return false;
+				}
+				lblNewLabel_2.setText("");
+				//for d
+				if ( d == null || d.equals("")) {
+					lblNewLabel_3.setText("Should not be null");
+										
+					return false;
+				}else if(d.matches("^[0-9]+$")==true) {
+					lblNewLabel_3.setText("Please enter character only");
+					return false;					
+				}
+				else if (d.length() > 12 ) {
+					lblNewLabel_3.setText("Number should be less than 12 characters");
+					return false;
+				}
+				lblNewLabel_3.setText("");
+				//for z
+				if ( z == null || z.equals("")) {
+					lblNewLabel_4.setText("Should not be null");
+										
+					return false;
+				}else if(z.matches("^[0-9]+$")==true) {
+					lblNewLabel_4.setText("Please enter character only");
+					return false;					
+				}
+				else if (z.length() > 12 ) {
+					lblNewLabel_4.setText("Number should be less than 12 characters");
+					return false;
+				}
+				lblNewLabel_4.setText("");
+				//for f
+				if (f == null || f.equals("")) {
+					lblNewLabel_5.setText("Should not be null");
+										
+					return false;
+				}else if(f.matches("^[0-9]+$")==false) {
+					lblNewLabel_5.setText("Please enter integer only");
+					return false;					
+				}
+				else if (f.length() > 12 ) {
+					lblNewLabel_5.setText("Number should be less than 12 digits");
+					return false;
+				}
+				lblNewLabel_5.setText("");
+				//for g
+				if (g == null || g.equals("")) {
+					lblNewLabel_6.setText("Should not be null");
+										
+					return false;
+				}else if(g.matches("^[0-9]+$")==false) {
+					lblNewLabel_6.setText("Please enter integer only");
+					return false;					
+				}
+				else if (g.length() != 4 ) {
+					lblNewLabel_6.setText("Year should 4 digits long");
+					return false;
+				}
+				lblNewLabel_6.setText("");
+				
+				//for h
+				if (h == null || h.equals("")) {
+					lblNewLabel_7.setText("Should not be null");
+										
+					return false;
+				}else if(h.matches("^[0-9]+$")==false) {
+					lblNewLabel_7.setText("Please enter integer only");
+					return false;					
+				}
+				else if (h.length() > 30 ) {
+					lblNewLabel_7.setText("Too long");
+					return false;
+				}	
+				lblNewLabel_7.setText("");
+				
+				
+				
+				
+				
+				lblNewLabel_8.setText("Record RegId: "+a+" added");
+				
+				return true;
+				
+				
 				
 			}
+
+			
 		});
 		btnSave.setBounds(205, 444, 111, 23);
 		frame.getContentPane().add(btnSave);
@@ -254,6 +455,7 @@ public class AddCar extends JFrame{
 				frame.dispose();
 			}
 		});
+		
 		btnBack.setBounds(205, 478, 111, 23);
 		frame.getContentPane().add(btnBack);
 		
@@ -262,10 +464,17 @@ public class AddCar extends JFrame{
 		
 		BufferedImage image = ImageIO.read(new File("images\\pattern.jpg"));
 		ImageIcon icon = new ImageIcon(image);
+		
+		
+		
+		
+		
 		JLabel label = new JLabel(icon);
 			
-		label.setBounds(-16, 0, 500, 550);
+		label.setBounds(0, 0, 484, 511);
 		frame.getContentPane().add(label);
+		
+	
 
 	}
 }
