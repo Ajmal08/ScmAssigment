@@ -49,6 +49,7 @@ public class UpdateGUI {
 	private JTextField textField_6;
 	private JTextField textField_7;
 	public static int counter;
+	
 
 	/**
 	 * Launch the application.

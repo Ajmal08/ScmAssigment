@@ -13,6 +13,7 @@ public class Car {
 	
 	
 	//ToString method to test and print out the car details
+	
 	@Override
 	public String toString() {
 		return "Car [regid=" + regid + ", make=" + make + ", model=" + model + ", colour=" + colour + ", type=" + type

@@ -25,6 +25,7 @@ public class SortGUI {
 	//populate arraylist of cars
 	public static ArrayList<Car> cars = new ArrayList<Car>();
 
+	
 	/**
 	 * Launch the application.
 	 * @throws IOException 

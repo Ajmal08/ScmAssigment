@@ -1,3 +1,6 @@
-123 bmw m6 red suv 2500 2008 1200456
-1243 aplmw m6 red suv 2500 2008 1600456
-1283 Ferrari m6 red suv 5500 2016 46004
+120 Honda Fit Silver Car 1500 2008 200000
+130 Toyota Vitz Black Car 1200 2015 250000
+140 Mazda 3 White Car 2000 2013 300000
+150 Isuzu kb250 Silver Truck 3000 2008 450000
+160 Toyota Hilux Black Truck 3000 2015 750000
+170 Toyota Hilux Black Truck 3000 2015 750000
